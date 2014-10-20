@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:mace:osu.edu:shibboleth:idp-ext"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:osu="urn:mace:osu.edu:shibboleth:idp-ext"
+    xmlns:ph="urn:mace:shibboleth:2.0:idp:profile-handler"
+    xmlns:dc="urn:mace:shibboleth:2.0:resolver:dc"
+    elementFormDefault="qualified">
+
+    <import namespace="urn:mace:shibboleth:2.0:idp:profile-handler"
+        schemaLocation="classpath:/schema/shibboleth-2.0-idp-profile-handler.xsd" />
+
+    <import namespace="urn:mace:shibboleth:2.0:resolver:dc"
+        schemaLocation="classpath:/schema/shibboleth-2.0-attribute-resolver-dc.xsd" />
+
+    <complexType name="Stateless">
+        <complexContent>
+            <extension base="ph:LoginHandlerType">
+                <attribute name="authenticationServletURL" type="string">
+                    <annotation>
+                        <documentation>
+                            The servlet context path to the StatelessLoginServlet that will authenticate the user.
+                        </documentation>
+                    </annotation>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="GracefulPoolLDAPDirectory">
+        <complexContent>
+            <extension base="dc:LDAPDirectory"/>
+        </complexContent>
+    </complexType>
+    
+</schema>
