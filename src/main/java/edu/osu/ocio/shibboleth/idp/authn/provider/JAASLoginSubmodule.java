@@ -36,7 +36,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.internet2.middleware.shibboleth.idp.authn.AuthenticationException;
-import edu.internet2.middleware.shibboleth.jaas.securid.SecurIDPrincipal;
 
 /**
  * Submodule that validates credentials using JAAS.
@@ -323,12 +322,6 @@ public class JAASLoginSubmodule implements StatelessLoginSubmodule {
                 info.setUsername(u);
                 Set<Principal> principals = loginSubject.getPrincipals();
                 String method = AuthnContext.PPT_AUTHN_CTX;
-                for (Principal principal : principals) {
-                    if (principal instanceof SecurIDPrincipal) {
-                        method = AuthnContext.TIME_SYNC_TOKEN_AUTHN_CTX;
-                        break;
-                    }
-                }
                 info.setAuthnMethod(method);
                 info.setAuthnInstant(System.currentTimeMillis());
             } catch (LoginException e) {
