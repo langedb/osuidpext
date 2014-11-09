@@ -39,7 +39,7 @@ users their password will be expiring soon.
 
 1. Install a custom servlet in web.xml and declare submodules to run.
 ---------------------------------------------------------------------
-```
+```xml
 <!-- Add custom Spring config file to set -->
 <context-param>
     <param-name>contextConfigLocation</param-name>
