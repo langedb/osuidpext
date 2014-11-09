@@ -78,7 +78,7 @@ users their password will be expiring soon.
 
 2. Modify handler.xml to use the extension namespace and custom login module.
 -----------------------------------------------------------------------------
-```
+```xml
 <ProfileHandlerGroup xmlns="urn:mace:shibboleth:2.0:idp:profile-handler"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                      xmlns:osu="urn:mace:osu.edu:shibboleth:idp-ext"
@@ -94,7 +94,7 @@ users their password will be expiring soon.
 
 3. Declare beans in custom Spring extension file added to web.xml.
 ------------------------------------------------------------------
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:util="http://www.springframework.org/schema/util"
@@ -216,7 +216,7 @@ users their password will be expiring soon.
 
 4. Create a login.vt template in $IDP_HOME/conf.
 ------------------------------------------------
-```
+```html
 <!-- excerpt of the interesting bits -->
 
 <div id="loginForm">
